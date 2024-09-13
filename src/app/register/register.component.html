@@ -1,0 +1,203 @@
+<!-- <form class="example-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        formControlName="email"
+        placeholder="Ex. pat@example.com"
+      />
+  
+      @if (registerForm.controls['email'].hasError('email') &&
+      !registerForm.controls['email'].hasError('required')) {
+      <mat-error>Please enter a valid email address</mat-error>
+      } @if (registerForm.controls['email'].hasError('required')) {
+      <mat-error>Email is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>UserName</mat-label>
+      <input
+        matInput
+        type="username"
+        formControlName="username"
+        placeholder="Ex. pat@example.com"
+      />
+  
+      @if (registerForm.controls['username'].hasError('pattern') &&
+      !registerForm.controls['username'].hasError('required')) {
+      <mat-error>Please enter a valid username </mat-error>
+      } @if (registerForm.controls['username'].hasError('required')) {
+      <mat-error>username is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>password</mat-label>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        placeholder="Ex. pat@example.com"
+      />
+  
+      @if (registerForm.controls['password'].hasError('pattern') &&
+      !registerForm.controls['password'].hasError('required')) {
+      <mat-error>Please enter a valid password</mat-error>
+      } @if (registerForm.controls['password'].hasError('required')) {
+      <mat-error>password is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>phoneNo</mat-label>
+      <input
+        matInput
+        type="number"
+        formControlName="phoneNo"
+        placeholder="Ex. pat@example.com"
+      />
+  
+      @if (registerForm.controls['phoneNo'].hasError('required') &&
+      !registerForm.controls['phoneNo'].hasError('required')) {
+      <mat-error>Please enter a valid phoneNo</mat-error>
+      } @if (registerForm.controls['phoneNo'].hasError('required')) {
+      <mat-error>phoneNo is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Dob</mat-label>
+      <input
+        matInput
+        type="Dob"
+        formControlName="dateOfBirth"
+        placeholder="Ex. pat@example.com"
+      />
+  
+      @if (registerForm.controls['dateOfBirth'].hasError('required') &&
+      !registerForm.controls['dateOfBirth'].hasError('required')) {
+      <mat-error>Please enter a valid Dob</mat-error>
+      } @if (registerForm.controls['dateOfBirth'].hasError('required')) {
+      <mat-error>Dob is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>confirmPassword</mat-label>
+      <input
+        matInput
+        type="confirmPassword"
+        formControlName="confirmPassword"
+        placeholder="Ex. pat@example.com"
+      />
+  
+      @if (registerForm.controls['confirmPassword'].hasError('required') &&
+      !registerForm.controls['confirmPassword'].hasError('required')) {
+      <mat-error>Please enter a valid confirmPassword</mat-error>
+      } @if (registerForm.controls['confirmPassword'].hasError('required')) {
+      <mat-error>confirmPassword is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+  </form> -->
+  <!-- <div class="row">
+    <div class="col-lg-3">
+         <img src="/Detective/public/images/detective cigar.webp" alt="cigar">
+    </div>
+    <div class="col-lg-6">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+          @if (registerForm.controls['email'].hasError('email') &&
+          !registerForm.controls['email'].hasError('required')) {
+          <mat-error>Please enter a valid email address</mat-error>
+          } @if (registerForm.controls['email'].hasError('required')) {
+          <mat-error>Email is <strong>required</strong></mat-error>
+          }
+          <div id="emailHelp" class="form-text">
+            We'll never share your email with anyone else.
+            Because we believe in confidentiality
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="username" class="form-label">UserName</label>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="username"
+            id="username"
+            aria-describedby="emailHelp"
+          />
+          @if (registerForm.controls['username'].hasError('pattern') &&
+      !registerForm.controls['username'].hasError('required')) {
+      <mat-error>Please enter a valid username </mat-error>
+      } @if (registerForm.controls['username'].hasError('required')) {
+      <mat-error>username is <strong>required</strong></mat-error>
+      }
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" />
+          @if (registerForm.controls['password'].hasError('pattern') &&
+          !registerForm.controls['password'].hasError('required')) {
+          <mat-error>Please enter a valid password</mat-error>
+          } @if (registerForm.controls['password'].hasError('required')) {
+          <mat-error>password is <strong>required</strong></mat-error>
+          }
+        </div>
+        <div class="mb-3">
+          <label for="confirmpassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmpassword" formControlName="confirmPassword"/>
+          @if (registerForm.controls['confirmPassword'].hasError('required') &&
+          !registerForm.controls['confirmPassword'].hasError('required')) {
+          <mat-error>Please enter a valid confirmPassword</mat-error>
+          } @if (registerForm.controls['confirmPassword'].hasError('required')) {
+          <mat-error>confirmPassword is <strong>required</strong></mat-error>
+          }
+        </div>
+        <div class="mb-3">
+          <label for="dateOfBirth" class="form-label">Dob</label>
+          <input
+            type="email"
+            class="form-control"
+            id="dateOfBirth"
+            formControlName="dateOfBirth"
+            aria-describedby="emailHelp"
+          />
+          @if (registerForm.controls['dateOfBirth'].hasError('required') &&
+      !registerForm.controls['dateOfBirth'].hasError('required')) {
+      <mat-error>Please enter a valid Dob</mat-error>
+      } @if (registerForm.controls['dateOfBirth'].hasError('required')) {
+      <mat-error>Dob is <strong>required</strong></mat-error>
+      }
+        </div>
+        <div class="mb-3">
+          <label for="phoneNo" class="form-label">phoneNo</label>
+          <input
+            type="email"
+            class="form-control"
+            id="phoneNo"
+            formControlName="phoneNo"
+            aria-describedby="emailHelp"
+          />
+          @if (registerForm.controls['phoneNo'].hasError('required') &&
+      !registerForm.controls['phoneNo'].hasError('required')) {
+      <mat-error>Please enter a valid phoneNo</mat-error>
+      } @if (registerForm.controls['phoneNo'].hasError('required')) {
+      <mat-error>phoneNo is <strong>required</strong></mat-error>
+      }
+        </div>
+       
+      
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="col-lg-3">
+
+    </div>
+   
+    
+  </div> -->

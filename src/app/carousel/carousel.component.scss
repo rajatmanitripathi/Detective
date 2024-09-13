@@ -1,0 +1,35 @@
+.card {
+  height: 100%;
+  width: 100%;
+}
+::ng-deep .p-element.p-galleria-thumbnails-bottom.p-galleria.p-component {
+  height: 100%;
+}
+
+.p-element p-galleria-thumbnails-bottom p-galleria p-component {
+  height: 100%;
+}
+::ng-deep .p-galleria-content {
+  height: 100%;
+}
+
+::ng-deep p-galleriaitem {
+  height: 80%;
+  width: 100%;
+}
+
+::ng-deep p-galleria-item-wrapper {
+  height: 100%;
+}
+::ng-deep .p-galleria-item-wrapper {
+  height: 100%;
+}
+::ng-deep p-galleriathumbnails {
+  height: 20%;
+}
+::ng-deep .p-galleria-thumbnail-wrapper {
+  height: 100%;
+}
+::ng-deep .p-galleria-thumbnail-container {
+  height: 100%;
+}

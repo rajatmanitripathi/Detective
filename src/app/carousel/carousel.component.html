@@ -1,0 +1,23 @@
+<div class="card">
+  <p-galleria
+    [value]="images"
+    [responsiveOptions]="responsiveOptions"
+    [numVisible]="5"
+  >
+    <ng-template pTemplate="item" let-item>
+      <img
+        [src]="item.itemImageSrc"
+        style="width: 100%; object-fit: cover; height: 100%"
+      />
+    </ng-template>
+    <ng-template pTemplate="thumbnail" let-item>
+      <div class="grid grid-nogutter justify-content-center">
+        <!-- <img
+          style="width: 100px; height: 100px; object-fit: cover;"
+          [src]="item.thumbnailImageSrc"
+        /> -->
+        {{item?.thumbnailImageSrc}}
+      </div>
+    </ng-template>
+  </p-galleria>
+</div>
