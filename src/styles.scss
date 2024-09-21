@@ -2,81 +2,110 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Kumbh+Sans:wght@800&display=swap");
+
+/* Variables 
+The variable '--mm' represents 1 millimeter, which is equal to 3.7795275591 pixels. 
+The other variables take variable for a mm in px and expand for the width and hieght of a standard A5 size notebool: 210 by 148 mm.  
+*/
+
 :root {
-    --app-background: #ffffff;
-    --app-accent-color: #e6281d;
-    --app-accent-color-lighter: #e8635c;
-    --app-accent-color-darker: #610000;
-    --app-accent2-color: #0095F6;
-    --app-accent2-color-lighter: #67bdff;
-    --app-accent2-color-darker: #247cbf;
-    --app-accent3-color: #ffcc00;
-    --app-accent3-color-lighter: #fff0b4;
-    --app-accent3-color-darker: #7b6200;
-    --white-color: #ffffff;
-    --string-color: #CE9178;
-    --app-error-color: #ff0000;
-    --app-error-color-lighter: #ff7272;
-    --app-error-color-darker: #950000;
-    --app-info-color: #ecec00;
-    --app-info-color-lighter: #ffff9e;
-    --app-info-color-darker: #9c9c00;
-    --app-success-color: #03A062;
-    --app-success-color-lighter: #77ffc8;
-    --app-success-darker: #006b40;
-    --app-light-gray-color: #d6d6d6;
-    // --app-font-family: 'IBM Plex Mono', Courier, 'Courier New', monospace;
-    --app-font-family: 'Roboto', Courier, 'Courier New', monospace;
-    --font-xxs: 0.2rem;
-    --font-xs: 0.4rem;
-    --font-s: 0.6rem;
-    --font-sm: 0.8rem;
-    --font-m: 1rem;
-    --font-ml: 1.2rem;
-    --font-l: 1.4rem;
-    --font-xl: 1.6rem;
-    --font-xxl: 1.8rem;
-    --app-transition: 0.2s ease-in-out;
-    --shadow-ini-down-s: rgb(0 0 0 / 5%) 0px 5px 100px -20px, rgb(0 0 0 / 9%) 0px 5px 60px -30px;
-    --shadow-hover-down-s: rgb(0 0 0 / 16%) 0px 50px 100px -20px, rgb(0 0 0 / 17%) 0px 30px 60px -30px;
-    --shadow-down-s: rgba(100, 100, 111, 0.2) 2px 2px 15px 3px;
-    --shadow-down-s-transparent: rgb(0 0 0 / 12%) 2px 2px 15px 3px;
-    --shadow-right-normal: rgb(0 0 0 / 38%) 5px 0px 30px;
-    font-size: clamp(15px, 1.05vw, 22px);
-    --app-border-radius-m: 6px;
-    --app-border-radius-s: 6px;
-    --app-border-radius-xs: 6px;
+  --mm: 3.7795275591px;
+  --grid-unit: calc(5 * var(--mm));
+  --a5-height: calc(210 * var(--mm));
+  --a5-width: calc(148 * var(--mm));
+  --line: 0.13px;
+}
+
+/* Main CSS */
+
+body {
+  background: mintcream;
+  font-size: 18px;
+}
+
+main {
+  position: relative;
+  margin: 40px auto;
+  left: calc(var(--a5-width) * 0.5);
+  width: var(--a5-width);
+  height: var(--a5-height);
+}
+// :root {
+//     --app-background: #ffffff;
+//     --app-accent-color: #e6281d;
+//     --app-accent-color-lighter: #e8635c;
+//     --app-accent-color-darker: #610000;
+//     --app-accent2-color: #0095F6;
+//     --app-accent2-color-lighter: #67bdff;
+//     --app-accent2-color-darker: #247cbf;
+//     --app-accent3-color: #ffcc00;
+//     --app-accent3-color-lighter: #fff0b4;
+//     --app-accent3-color-darker: #7b6200;
+//     --white-color: #ffffff;
+//     --string-color: #CE9178;
+//     --app-error-color: #ff0000;
+//     --app-error-color-lighter: #ff7272;
+//     --app-error-color-darker: #950000;
+//     --app-info-color: #ecec00;
+//     --app-info-color-lighter: #ffff9e;
+//     --app-info-color-darker: #9c9c00;
+//     --app-success-color: #03A062;
+//     --app-success-color-lighter: #77ffc8;
+//     --app-success-darker: #006b40;
+//     --app-light-gray-color: #d6d6d6;
+//     // --app-font-family: 'IBM Plex Mono', Courier, 'Courier New', monospace;
+//     --app-font-family: 'Roboto', Courier, 'Courier New', monospace;
+//     --font-xxs: 0.2rem;
+//     --font-xs: 0.4rem;
+//     --font-s: 0.6rem;
+//     --font-sm: 0.8rem;
+//     --font-m: 1rem;
+//     --font-ml: 1.2rem;
+//     --font-l: 1.4rem;
+//     --font-xl: 1.6rem;
+//     --font-xxl: 1.8rem;
+//     --app-transition: 0.2s ease-in-out;
+//     --shadow-ini-down-s: rgb(0 0 0 / 5%) 0px 5px 100px -20px, rgb(0 0 0 / 9%) 0px 5px 60px -30px;
+//     --shadow-hover-down-s: rgb(0 0 0 / 16%) 0px 50px 100px -20px, rgb(0 0 0 / 17%) 0px 30px 60px -30px;
+//     --shadow-down-s: rgba(100, 100, 111, 0.2) 2px 2px 15px 3px;
+//     --shadow-down-s-transparent: rgb(0 0 0 / 12%) 2px 2px 15px 3px;
+//     --shadow-right-normal: rgb(0 0 0 / 38%) 5px 0px 30px;
+//     font-size: clamp(15px, 1.05vw, 22px);
+//     --app-border-radius-m: 6px;
+//     --app-border-radius-s: 6px;
+//     --app-border-radius-xs: 6px;
   
   
   
   
-    //pokdex
-    --main-bg-color: var(--app-accent-color);
-    --secondary-bg-color: #f2f2f2;
-    --main-screen-bg-color: #98cb98;
-    --secondary-screen-bg-color: #9e9d9d;
-    --main-buttons-color: #585858;
-    --square-buttons-color: #7ca9f7;
-  }
+//     //pokdex
+//     --main-bg-color: var(--app-accent-color);
+//     --secondary-bg-color: #f2f2f2;
+//     --main-screen-bg-color: #98cb98;
+//     --secondary-screen-bg-color: #9e9d9d;
+//     --main-buttons-color: #585858;
+//     --square-buttons-color: #7ca9f7;
+//   }
   
-  body {
-    font-family: "Cormorant Garamond", serif;
-  text-transform: uppercase;
-  box-sizing: inherit;
-  font-size: 10.5px;
-  letter-spacing: 1px;
-  text-shadow: 0 0 2px rgba(0, 0, 0, .5),
-                -1px -1px 1px rgba(179, 179, 179, .5),
-                1px 1px 0 rgba(255, 255, 255, 0.55),
-                0 1px 3px white;
-  overflow: hidden;
-  color: #191919;
-  background-color: #383838;
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-image: url("https://scontent.fdel27-4.fna.fbcdn.net/v/t1.6435-9/65271886_580368565703651_4239297987198582784_n.png?_nc_cat=106&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=3VQl68YLRSAQ7kNvgEzXitU&_nc_ht=scontent.fdel27-4.fna&oh=00_AYCmj96rsjU3l93L1JALaJXjiwBcBNkQn2i50Ja3xS9peA&oe=66F3CDF8");
-  }
+  // body {
+  //   font-family: "Cormorant Garamond", serif;
+  // text-transform: uppercase;
+  // box-sizing: inherit;
+  // font-size: 10.5px;
+  // letter-spacing: 1px;
+  // text-shadow: 0 0 2px rgba(0, 0, 0, .5),
+  //               -1px -1px 1px rgba(179, 179, 179, .5),
+  //               1px 1px 0 rgba(255, 255, 255, 0.55),
+  //               0 1px 3px white;
+  // overflow: hidden;
+  // color: #191919;
+  // background-color: #383838;
+  // // background-size: cover;
+  // // background-position: center;
+  // // background-repeat: no-repeat;
+  // // background-image: url("https://scontent.fdel27-4.fna.fbcdn.net/v/t1.6435-9/65271886_580368565703651_4239297987198582784_n.png?_nc_cat=106&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=3VQl68YLRSAQ7kNvgEzXitU&_nc_ht=scontent.fdel27-4.fna&oh=00_AYCmj96rsjU3l93L1JALaJXjiwBcBNkQn2i50Ja3xS9peA&oe=66F3CDF8");
+  // }
   
 
 //   body::before {

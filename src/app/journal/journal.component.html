@@ -1,0 +1,67 @@
+<main class="notebook">
+  <article class="book">
+    
+    <section  class="page active cover-page" (click)="getClassNames($event)"  >
+      
+      <div class="front cover-page-front-outside">
+        <h1>Field<br />Notebook</h1>
+        <p>A5 Size<br />(148x210 mm)</p>
+      </div>
+      <div class="back cover-page-front-inside">
+        <h1>Notes</h1>
+        <h2>Fonts used</h2>
+        <p>On cover: <a href="https://fonts.google.com/specimen/Kumbh+Sans">Kumbh Sans</a> on Google Fonts (Looks a lot like Futura). This handwritten font is <a href="https://fonts.google.com/specimen/Cedarville+Cursive"> Cedarville Cursive</a>, also from Google Fonts.</p>
+        <h2>Other facts</h2>
+        <p>IMHO, bullet journals are a useful way of keeping track of life. I also really like the notebook style of the <a href="https://fieldnotesbrand.com/products/original-kraft">Origianl Kraft pocket notebooks</a> from Field Notes, and I like a dot grid rule, and the A5 size (148x210mm); so this is a hybrid of all of that.</p>
+        <p>The background of the digital paper here has a dot grid background of 5mm (~18.9 pixels)</p>
+      </div>
+      
+    </section>
+    <!-- Section -->
+    <section  class="page" (click)="getClassNames($event)">
+      <div class="front">
+        <h1>Table of Contents</h1>
+        <dl>
+          <dt>Future Log</dt>
+          <dd>page 2</dd>
+          <dt>Key</dt>
+          <dd>page 3</dd>
+        </dl>
+      </div>
+      <div class="back">
+        <p></p>
+      </div>
+    </section>
+    <!-- Section -->
+    <section  class="page" (click)="getClassNames($event)">
+      <div class="front">
+        <h1>A Bullet Journal <u>Key</u> That Works For Me</h1>
+        <p>
+          <strong>&middot;</strong> task <br />
+          <strong>&middot; &middot;</strong> task in progress <br />
+          <strong>&check;</strong> task complete<br />
+          <strong>&rsaquo;</strong> move to tomorrow <br />
+          <strong>&raquo;</strong> move to later /future log <br />
+          <strong>&#128337;</strong> . meeting - 12:00/30 (start time/length in minutes)<br />
+          <strong>X</strong> task cancelled<br />
+          <strong>&#128681; &middot;</strong> personal task <br />
+          <strong>&#x1F4BC; &middot;</strong> work task <br />
+          <strong>&excl; &middot;</strong> important task <br />
+          <strong>&excl; &excl; &middot;</strong> very important task <br />
+          <strong>&#10065;</strong> note <br />
+        </p>
+      </div>
+      <div class="back">
+        <p></p>
+      </div>
+    </section>
+    <section  class="page" (click)="getClassNames($event)">
+      <div class="front cover-page-back-inside">
+        <p></p>
+      </div>
+      <div class="back cover-page-back-outside">
+        <p></p>
+      </div>
+    </section>
+  </article>
+</main>

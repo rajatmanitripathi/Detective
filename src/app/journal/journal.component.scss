@@ -1,0 +1,183 @@
+/* Imports */
+
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Kumbh+Sans:wght@800&display=swap");
+
+/* Variables 
+The variable '--mm' represents 1 millimeter, which is equal to 3.7795275591 pixels. 
+The other variables take variable for a mm in px and expand for the width and hieght of a standard A5 size notebool: 210 by 148 mm.  
+*/
+
+:root {
+  --mm: 3.7795275591px;
+  --grid-unit: calc(5 * var(--mm));
+  --a5-height: calc(210 * var(--mm));
+  --a5-width: calc(148 * var(--mm));
+  --line: 0.13px;
+}
+
+/* Main CSS */
+
+body {
+  background: mintcream;
+  font-size: 18px;
+}
+
+main {
+  position: relative;
+  margin: 40px auto;
+  left: calc(var(--a5-width) * 0.5);
+  width: var(--a5-width);
+  height: var(--a5-height);
+}
+
+h1 {
+  padding: calc(2 * var(--grid-unit));
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 2em;
+}
+
+h2 {
+  padding: 0 calc(2 * var(--grid-unit));
+  margin-top: calc(2 * var(--grid-unit));
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+a {
+  color: maroon;
+  text-decoration-style: wavy;
+  font-weight: bolder;
+}
+
+p,
+dl {
+  padding: var(--grid-unit) calc(2 * var(--grid-unit)) 0
+    calc(2 * var(--grid-unit));
+  font-family: "Cedarville Cursive", cursive;
+}
+
+.notebook {
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+}
+.book {
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.34);
+  border-radius: 0 calc(0.105 * var(--a5-width)) calc(0.105 * var(--a5-width)) 0;
+}
+.page {
+  cursor: pointer;
+  position: absolute;
+  background: ivory;
+  width: var(--a5-width);
+  height: var(--a5-height);
+  background-image: radial-gradient(lightblue 0.9px, transparent 0);
+  background-size: var(--grid-unit) var(--grid-unit);
+  background-position: calc(var(--grid-unit) / 2) calc(var(--grid-unit) / 2);
+  border-radius: 0 calc(0.105 * var(--a5-width)) calc(0.105 * var(--a5-width)) 0;
+  -webkit-transition: 1.5s -webkit-transform;
+  transition: 1.5s transform;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: left center;
+  -ms-transform-origin: left center;
+  transform-origin: left center;
+}
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  background: ivory;
+  background-image: radial-gradient(lightblue 0.9px, transparent 0);
+  background-size: var(--grid-unit) var(--grid-unit);
+  background-position: calc(var(--grid-unit) / 2) calc(var(--grid-unit) / 2);
+  border-radius: 0 calc(0.105 * var(--a5-width)) calc(0.105 * var(--a5-width)) 0;
+  border-radius: calc(0.105 * var(--a5-width)) 0 0 calc(0.105 * var(--a5-width));
+}
+
+.page.active {
+  z-index: 1;
+}
+.page.flipped {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+.page.flipped:last-of-type {
+}
+
+/* Cover style */
+
+.cover-page {
+  background: #a58752;
+}
+
+.cover-page p,
+.cover-page h2 {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.cover-page-front-outside h1 {
+  background: #a58752;
+  border-radius: 0 calc(0.105 * var(--a5-width)) calc(0.105 * var(--a5-width)) 0;
+  text-transform: uppercase;
+  font-size: 3.6em;
+  letter-spacing: 1rem;
+  line-height: 1.2em;
+  text-align: center;
+  margin-top: calc(var(--a5-height) * 0.2);
+}
+
+.cover-page-front-outside p {
+  text-align: center;
+  background: #a58752;
+}
+
+.cover-page-back-inside {
+  background: #a58752;
+  border-radius: 0 calc(0.105 * var(--a5-width)) calc(0.105 * var(--a5-width)) 0;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.34);
+}
+
+.cover-page-back-outside,
+.cover-page-front-inside {
+  background: #a58752;
+  border-radius: calc(0.105 * var(--a5-width)) 0 0 calc(0.105 * var(--a5-width));
+}
+
+.cover-page-front-inside p {
+  font-family: "Cedarville Cursive", cursive;
+}
+.cover-page-front-inside h2 {
+  font-weight: bold;
+  // font-family: ;
+}
+
+/* Table of Content */
+
+dl {
+  width: 100%;
+  box-sizing: border-box;
+  display: table;
+  columns: 1;
+  padding: calc(2 * var(--grid-unit));
+}
+
+dt,
+dd {
+  vertical-align: top;
+}
+
+dd {
+  text-align: right;
+}

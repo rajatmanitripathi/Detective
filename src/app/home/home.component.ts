@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { Carousel06Component} from '../carousel/carousel.component';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
